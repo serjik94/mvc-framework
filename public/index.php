@@ -1,8 +1,10 @@
 <?php
-error_reporting(E_ALL);
-ini_set("display_errors","On");
 
 require('../vendor/autoload.php');
+
+error_reporting(E_ALL);
+set_error_handler('\Core\Error::errorHandler');
+set_exception_handler('\Core\Error::exceptionHandler');
 
 $router = new Core\Router();
 
