@@ -11,6 +11,11 @@ abstract class Controller
         $this->routeParameters = $routeParameters;
     }
 
+    /**
+     * @param $name
+     * @param $arguments
+     * @throws \Exception
+     */
     public function __call($name, $arguments)
     {
         $methodName = preg_replace('/@Action/', '', $name);
@@ -21,7 +26,7 @@ abstract class Controller
                 $this->after();
             }
         } else {
-            echo 'There`s no such method ' . $methodName . ' in controller ' . get_class($this);
+            throw new \Exception('There`s no such method ' . $methodName . ' in controller ' . get_class($this));
         }
     }
 
