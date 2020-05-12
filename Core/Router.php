@@ -64,6 +64,7 @@ class Router
     /**
      * @param $url
      * @return mixed
+     * @throws \Exception
      */
     public function dispatch($url)
     {
@@ -79,11 +80,11 @@ class Router
                 $controller->$method();
 
             } else {
-                echo 'There`s no class: ' . $controller;
+                throw new \Exception('There`s no class: ' . $controller);
             }
 
         } else {
-            echo 'There`s no such route in route list';
+            throw new \Exception('There`s no such route in route list', 404);
         }
     }
 
