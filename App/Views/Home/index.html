@@ -8,10 +8,11 @@
     <title>Home index</title>
 </head>
 <body>
-    <h1>Welcome, {{name}}!</h1>
+    <h1>Welcome, Serhii!</h1>
     <ul>
-        {% for colour in colours %}
-            <li>{{colour}}</li>
+        {% for post in posts %}
+            <li>{{post.title}}</li>
+            <li>{{post.content}}</li>
         {% endfor %}
     </ul>
 </body>

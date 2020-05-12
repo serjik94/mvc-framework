@@ -26,9 +26,6 @@ class View
         $loader = new FilesystemLoader(dirname(__DIR__) . '/App/Views');
         $twig = new Environment($loader);
 
-        echo $twig->render('Home/index.html', [
-            'name' => 'Serhii',
-            'colours' => ['blue', 'red', 'green'],
-        ]);
+        echo $twig->render($view, $args);
     }
 }
