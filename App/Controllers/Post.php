@@ -3,19 +3,25 @@
 namespace App\Controllers;
 
 use Core\Controller;
+use Core\View;
 
 class Post extends Controller
 {
     public function before()
     {
-        echo '(before)';
         parent::before();
     }
 
     public function after()
     {
-        echo '(after)';
         parent::after();
+    }
+
+    public function index()
+    {
+        View::renderTemplate('Home/index.html', [
+            'posts' => []
+        ]);
     }
 
     public function create()

@@ -3,20 +3,18 @@
 namespace App\Controllers;
 
 use Core\Controller;
+use App\Models\Post;
 use Core\View;
 
 class Home extends Controller
 {
     public function index()
     {
-//        View::render('Home/index.php', [
-//            'name' => 'Serhii',
-//            'colours' => ['blue', 'green', 'red'],
-//        ]);
+        $posts = Post::query('SELECT * FROM posts ORDER BY created_at');
 
-        View::renderTemplate('Home/index.php', [
+        View::renderTemplate('Home/index.html', [
             'name' => 'Serhii',
-            'colours' => ['blue', 'green', 'red'],
+            'posts' => $posts,
         ]);
     }
 }
