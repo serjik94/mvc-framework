@@ -7,6 +7,12 @@ class Router
 {
     private $routes = [];
     private $params = [];
+    private $queryString;
+
+    public function __construct()
+    {
+        $this->queryString = $_SERVER['QUERY_STRING'];
+    }
 
     /**
      * @param $route
@@ -66,9 +72,9 @@ class Router
      * @return mixed
      * @throws \Exception
      */
-    public function dispatch($url)
+    public function dispatch()
     {
-        $url = $this->removeQueryStringVariables($url);
+        $url = $this->removeQueryStringVariables($this->queryString);
 
         if ($this->match($url)) {
             $controller = $this->getNamespace() . $this->convertToStudlyCaps($this->params['controller']);

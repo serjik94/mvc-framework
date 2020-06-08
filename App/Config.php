@@ -9,5 +9,4 @@ class Config
     const DB_NAME = 'framework';
     const DB_USER = 'admin';
     const DB_PASSWORD = 'admin';
-    const APP_DEBUG = false;
 }

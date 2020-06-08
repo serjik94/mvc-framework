@@ -5,7 +5,7 @@ namespace App\Controllers;
 use Core\Controller;
 use Core\View;
 
-class Post extends Controller
+class PostsController extends Controller
 {
     public function before()
     {
