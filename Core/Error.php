@@ -29,7 +29,7 @@ class Error
 
         http_response_code(self::$statusCode);
 
-        if (Config::APP_DEBUG) {
+        if (getenv('APP_DEBUG')) {
             echo self::errorMessageDetails($exception);
         } else {
             $log = dirname(__DIR__) . '/storage/logs/log-' . date('Y-m-d') . '.log';

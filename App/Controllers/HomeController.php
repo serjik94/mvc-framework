@@ -6,7 +6,7 @@ use Core\Controller;
 use App\Models\Post;
 use Core\View;
 
-class Home extends Controller
+class HomeController extends Controller
 {
     public function index()
     {
